@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Metric-Unit-Converter",
-    "slug": "Metric-Unit-Converter",
+    "name": "Metri",
+    "slug": "Metri",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
@@ -22,6 +22,11 @@
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2fdc954c-34ab-4dad-8c39-ce6be436b17f"
+      }
     }
   }
 }
