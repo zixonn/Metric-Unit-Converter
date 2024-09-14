@@ -1,5 +1,5 @@
 
-import { create } from "zustand";
+import {create} from "zustand";
 import {persist} from "zustand/middleware"
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -26,11 +26,6 @@ const usePersistedCounterStore = create(
 )
 
 export {useCounterStore, usePersistedCounterStore}
-
-
-
-
-
 
 
 /**'

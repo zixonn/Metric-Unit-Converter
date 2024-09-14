@@ -1,33 +1,25 @@
-import { StyleSheet, Text, View, Button} from 'react-native';
-import { useCounterStore, usePersistedCounterStore } from './store';
-import { Chip, PaperProvider } from 'react-native-paper';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { PaperProvider } from 'react-native-paper';
+import Home from "./src/screens/Home"
+import History from "./src/screens/History"
+import Bookmarks from "./src/screens/Bookmarks"
+import Setting from "./src/screens/Settings"
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
-
-  const {count, increment, decrement, setZero } = useCounterStore();
-  const {persistedCount, persistedIncrement, persistedDecrement, persistedSetZero } = usePersistedCounterStore();
+  const Drawer = createDrawerNavigator()
 
   return (
     <PaperProvider>
-      <View style={styles.container}>
-        <Text>{count}</Text>
-        <Button title = "Increment" onPress = {increment}/>
-        <Button title = "Decrement" onPress = {decrement}/>
-        <Button title = "Reset" onPress = {setZero}/>
-        <Text>{persistedCount}</Text>
-        <Button title = "Persistent Increment" onPress = {persistedIncrement}/>
-        <Button title = "Persistent Decrement" onPress = {persistedDecrement}/>
-        <Button title = "Persistent Reset" onPress = {persistedSetZero}/>
-      </View>
+      <NavigationContainer>
+        <Drawer.Navigator screenOptions={{headerShown: false}}>
+          <Drawer.Screen name='Home' component={Home} />
+          <Drawer.Screen name='History' component={History} />
+          <Drawer.Screen name='Bookmarks' component={Bookmarks} />
+          <Drawer.Screen name='Settings' component={Setting} />
+        </Drawer.Navigator>
+      </NavigationContainer>
     </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
