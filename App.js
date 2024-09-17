@@ -10,12 +10,11 @@ import { PaperProvider } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
 
 const AppContent = () => {
+  const Drawer = createDrawerNavigator();
+
   const { getTheme } = useThemeProvider();
   const theme = getTheme();
-
   const statusBarStyle = theme === DarkTheme ? "light" : "dark";
-
-  const Drawer = createDrawerNavigator();
 
   return (
     <>

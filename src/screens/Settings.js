@@ -5,6 +5,7 @@ import PageBody from '../components/PageBody';
 import { useThemeProvider } from '../context/ThemeContext';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import MenuIcon from '../components/MenuIcon';
+import MyText from '../components/MyText';
 
 const Settings = () => {
   const { getTheme, updateTheme } = useThemeProvider();
@@ -22,15 +23,15 @@ const Settings = () => {
       <MenuIcon/>
       <RadioButton.Group onValueChange={(newValue) => setAppTheme(newValue)} value={appTheme}>
         <View>
-          <Text>Light</Text>
+          <MyText>Light</MyText>
           <RadioButton value="light" />
         </View>
         <View>
-          <Text>Dark</Text>
+          <MyText>Dark</MyText>
           <RadioButton value="dark" />
         </View>
         <View>
-          <Text>System</Text>
+          <MyText>System</MyText>
           <RadioButton value="system" />
         </View>
       </RadioButton.Group>
